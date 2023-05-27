@@ -29,13 +29,13 @@ namespace MovieRecordsManager.Controllers
 
 		// GET: api/Movies/3
 		[HttpGet("{id}")]
-		public async Task<ActionResult<Movie>> GetMovie()
+		public async Task<ActionResult<Movie>> GetMovie(int id)
 		{
 			if (_dbContext.Movies == null)
 			{
 				return NotFound();
 			}
-			var movie = await _dbContext.Movies.FindAsync();
+			var movie = await _dbContext.Movies.FindAsync(id);
 			if (movie == null)
 			{
 				return NotFound();
