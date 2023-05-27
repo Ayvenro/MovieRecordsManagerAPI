@@ -1,6 +1,14 @@
-﻿namespace MovieRecordsManager.Models
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace MovieRecordsManager.Models
 {
-	public class MovieContext
+	public class MovieContext : DbContext
 	{
+		public MovieContext(DbContextOptions<MovieContext> options) 
+			: base(options) 
+		{
+		}
+
+		public DbSet<Movie> Movies { get; set; } = null;
 	}
 }
