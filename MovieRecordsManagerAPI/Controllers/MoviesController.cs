@@ -81,7 +81,7 @@ namespace MovieRecordsManager.Controllers
 		}
 
 		// DETETE: api/Movies/3
-		[HttpDelete("{id")]
+		[HttpDelete("{id}")]
 		public async Task<IActionResult> DeleteMovie(int id)
 		{
 			if (_dbContext.Movies == null)
